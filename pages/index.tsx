@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import LoginForm from '../components/login-form'
+import LoginForm from 'CarbonConnect/components/login-form'
 
 const Home: NextPage = () => {
   return (
