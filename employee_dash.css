@@ -64,7 +64,7 @@ flex-shrink: 0;
 */
 
 /* TASK LIST*/
-#app {
+#task_container {
 width: 300px;
 height:400px;
 background-color:beige ;
@@ -76,25 +76,26 @@ margin-top: 50px;
 margin-left:20px;
 }
 
+
 h2 {
 font-size: 24px;
 color: #000;
 text-align: center;
 font-family: Montserrat;
 font-style: normal;
-font-weight: 500;
+font-weight: 500px;
 line-height: normal;
-margin-top: 12px;
+margin-top: 10px;
     
 }
 
-ul {
+ul task-list{
     list-style: none;
     padding: 0;
-
+    
 }
 
-li {
+ li{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,19 +103,17 @@ li {
     padding: 5px;
     border: 1px solid #057781;
     border-radius: 5px;
-color: #057781;
-text-align: center;
-font-family: Montserrat;
-font-size: 15px;
-font-style: normal;
-font-weight: 200;
-line-height: normal;
 
 width: 238px;
 height: 34px;
 flex-shrink: 0;
-
 }
+
+
+li:hover{
+    background-color:lightgrey ;
+}
+
 
 #progress_container{
 width: 300px;
@@ -140,6 +139,6 @@ font-family: Montserrat;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-
 }
+
 
