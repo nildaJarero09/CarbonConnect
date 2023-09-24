@@ -1,0 +1,152 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(90deg, #3ab97a, #07cada);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+#content_container {
+    width: 50%;
+    height: 60%;
+    position:relative;
+}
+#header_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1; /* Place the image behind the content */
+
+    /* Set the image dimensions as needed 
+    width: 100%;
+    height: 200px;  Adjust the height according to your image */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+#form_container {
+    width: 100%;
+    height: 100%;
+
+    background-color: #BDF0DD;
+    box-shadow: 0 0 50px -20px #000;
+    border-radius: 2%;
+
+    overflow: hidden;
+    
+}
+
+#form_header_container {
+    width: 100%;
+    height: 5%;
+flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: center;
+
+    padding: 30px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+
+    
+    background: #BDF0DD;
+}
+
+#form_header {
+    display: inline-block;
+    font-size: 30px;
+    font-family: Montserrat;
+    font-weight: 500;
+    letter-spacing: 1px;
+  color:#000;
+}
+#sign_up {
+    /*display: inline-block;*/
+    font-size: 15px;
+    font-family: Montserrat;
+    font-weight: 100;
+    letter-spacing: 1px;
+
+    margin-top: 10px;
+  color:#000;
+}
+
+
+
+#form_content_container {
+    width: 100%;
+    height: 90%;
+
+    float: center;
+    /*flex-direction: column;
+    flex-wrap: nowrap;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 50px;
+}
+
+#form_content_inner_container {
+    width: 75%;
+    height: 100%;
+
+    float: center;
+
+}
+
+input {
+    width: 100%;
+    height: 40px;
+
+    padding-left: 10px;
+    margin-bottom: 20px;
+
+    background: #fff;
+    font-family: Montserrat;
+    font-weight: 500;
+    color: #000;
+    font-size: 15px;
+
+    border-radius: 10px;
+    
+}
+
+#button_container {
+   
+    height: 10%;
+    text-align: center;
+    float:center;
+    margin-top: 15px;
+    
+    
+}
+
+#button_container button {
+    width: 40%;
+    height: 100%;
+    
+
+    background-color:#07C2CE ;
+    border-radius: 10px;
+
+    font-family: Montserrat;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    display: center;
+    justify-content: center;
+    align-items: center;
+}
