@@ -63,21 +63,129 @@ quill.getModule('toolbar').addHandler('image', () => {
         reader.onload = () => {
             var range = quill.getSelection();
             quill.insertEmbed(range.index, 'image', reader.result);
+
+            // Wait for Quill to insert the image, then adjust its size
+            setTimeout(() => {
+                const imgElem = quill.container.querySelector("img[src='" + reader.result + "']");
+                if (imgElem) {
+                    imgElem.style.maxWidth = "100%";
+                    imgElem.style.height = "auto";
+                }
+            }, 50);
         };
 
         reader.readAsDataURL(file);
     };
 });
 
+// Firebase configuration  
+var firebaseConfig = {
+    apiKey: "AIzaSyBCxQrqopNLvh8f6PNKB-uXZS5Sf_RaT2g",
+    authDomain: "carbonconnect2023.firebaseapp.com",
+    projectId: "carbonconnect2023",
+    storageBucket: "carbonconnect2023.appspot.com",
+    messagingSenderId: "1041152472743",
+    appId: "1:1041152472743:web:4297ad684e743d132f4d82",
+  };
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var database = firebase.database();
+
+// HTML element to display the content
+var feedDisplay = document.getElementById('feedDisplay');
+
+// store post in database
 document.getElementById('editorForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault();
 
-    var contentDelta = quill.getContents(); // Get content in Quill's Delta format
-    var contentHtml = quill.root.innerHTML; // Get content in HTML format
-
-    // Now, you can send 'contentDelta' or 'contentHtml' to your server, display it, etc.
-
-    console.log(contentHtml); // For demonstration purposes
-
+    var contentHtml = quill.root.innerHTML;
+    console.log(contentHtml);  // logging the content being submitted
+    
+    var newPostKey = database.ref().child('posts').push().key;
+    var postData = {
+        content: contentHtml,
+    };
+    
+    var updates = {};
+    updates['/posts/' + newPostKey] = postData;
+    
+    database.ref().update(updates).then(() => {
+        // After storing the data, fetch all the posts and display them
+        database.ref('/posts/').once('value').then(function(snapshot) {
+            feedDisplay.innerHTML = "";  // clear the feed before populating
+            snapshot.forEach(function(childSnapshot) {
+                var postContent = childSnapshot.val().content;
+                if (postContent) {
+                    var postDiv = document.createElement("div");
+                    postDiv.classList.add("post");
+                    postDiv.innerHTML = postContent;
+                    // Prepend the postDiv to the feedDisplay
+                    if(feedDisplay.firstChild) {
+                        feedDisplay.insertBefore(postDiv, feedDisplay.firstChild);
+                    } else {
+                        feedDisplay.appendChild(postDiv);
+                    }
+                }
+            });
+        });
+    });
+    
     quill.setContents([]);
 });
+
+let lastKey = null; // to remember the key of the last fetched item
+const itemsPerPage = 10;
+
+function fetchPosts() {
+    let ref = database.ref('posts').orderByKey().limitToLast(itemsPerPage);
+    if (lastKey) {
+        ref = ref.endAt(lastKey);
+    }
+
+    ref.once('value').then(snapshot => {
+        const data = snapshot.val();
+
+        if (!data) return;
+
+        // Transform data to array and exclude the last fetched item from previous fetch
+        const posts = Object.keys(data).map(key => {
+            return { ...data[key], id: key };
+        });
+        if (lastKey && posts.length > 0) {
+            posts.pop();
+        }
+
+        // Remember the key of the last item for the next fetch
+        if (posts.length > 0) {
+            lastKey = posts[0].id;
+            renderPosts(posts);
+        }
+    });
+}
+
+function renderPosts(posts) {
+    // Append posts to the feedDisplay div
+    posts.forEach(post => {
+        const postElem = document.createElement('div');
+        postElem.classList.add('post');
+        postElem.innerHTML = post.content;
+        feedDisplay.prepend(postElem); // prepend to show latest content first
+    });
+}
+
+// Infinite scroll logic
+window.onscroll = function() {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) { // 500 is a threshold, adjust as required
+        fetchPosts();
+    }
+};
+
+// Initial load
+fetchPosts();
+
+
+
+
+
