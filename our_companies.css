@@ -1,29 +1,22 @@
 .navbar {
-    display: flex;
-    justify-content: space-between; /* This will push items to the left and right ends of the container */
-    align-items: center; /* Vertically center the items */
-    background-color:#3ab97a; /* Same color as your menu for consistency */
-    padding: 10px 20px; /* Padding to give some space around items */
-    position: fixed; /* Keeps the navbar at the top */
-    top: 0;
-    left: 0;
-    right: 0; /* Stretch navbar to full viewport width */
-    z-index: 1001; /* Ensure it's above other items, including the menu */
+  display: flex;
+  justify-content: space-between; /* This will push items to the left and right ends of the container */
+  align-items: center; /* Vertically center the items */
+  background-color:#3ab97a; /* Same color as your menu for consistency */
+  padding: 10px 20px; /* Padding to give some space around items */
+  position: fixed; /* Keeps the navbar at the top */
+  top: 0;
+  left: 0;
+  right: 0; /* Stretch navbar to full viewport width */
+  z-index: 1001; /* Ensure it's above other items, including the menu */
 }
 
-.navbar-text {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
-}
+
 
 .brand-logo {
-    height: 70px; /* Adjust based on the size you want for your logo */
-    width: auto;
-    margin-right: 15px;
+  height: 80px; /* Adjust based on the size you want for your logo */
+  width: auto;
+  margin:0 auto;
 }
 
 .menu-container {
