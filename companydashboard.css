@@ -105,6 +105,21 @@ h1{
     font-family: Montserrat,sans-serif;
     padding-top: 10px;
 }
+h2{
+    text-align: center;
+    font-size: 25px;
+    font-family: Montserrat,sans-serif;
+    margin-top: 50px;
+    color:#07C2CE;
+    padding-top: 10px;
+}
+
+p{
+    text-align: center;
+    font-size: 20px;
+    font-family: Montserrat,sans-serif;
+    color:#3ab97a
+}
 
 .mission{
 position:fixed;
@@ -122,4 +137,28 @@ border-radius: 7px;
 font-family: Montserrat;
 border-left: 7px solid #07cada;
 box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+.tree_container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+#percentage {
+    font-size: 18px;
+    font-family: Montserrat;
+
+}
+
+#percentage-value {
+    font-weight: bold;
+    color: green;
+}
+
+#status-image {
+    max-width: 50%;
+    max-height: 50%;
+    margin-top: 20px;
 }
