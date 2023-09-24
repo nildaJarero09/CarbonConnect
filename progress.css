@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#percentage {
+    font-size: 18px;
+}
+
+#percentage-value {
+    font-weight: bold;
+    color: green;
+}
+
+#status-image {
+    max-width: 200px;
+    margin-top: 20px;
+}
