@@ -23,6 +23,7 @@ var addButton = document.getElementById('add-task-button');
 
 // Reference to the Firebase database node
 var tasksRef = database.ref('tasks');
+var completedPercentageRef = database.ref('completedPercentage'); // Reference for percentage completion
 
 // Function to add a task to the database
 function addTaskToDatabase(task) {
@@ -32,6 +33,26 @@ function addTaskToDatabase(task) {
 // Function to toggle a task's completion status
 function toggleTaskCompletion(taskKey, isCompleted) {
     tasksRef.child(taskKey).update({ completed: !isCompleted });
+}
+
+// Function to calculate and update the percentage of completed tasks
+function updateCompletedPercentage() {
+    tasksRef.once('value', function (snapshot) {
+        var totalTasks = snapshot.numChildren();
+        var completedTasks = 0;
+
+        snapshot.forEach(function (childSnapshot) {
+            var taskData = childSnapshot.val();
+            var isCompleted = taskData.completed;
+
+            if (isCompleted) {
+                completedTasks++;
+            }
+        });
+
+        var percentage = (completedTasks / totalTasks) * 100;
+        completedPercentageRef.set(percentage); // Update the completedPercentage variable
+    });
 }
 
 // Function to display tasks from the database
@@ -65,6 +86,9 @@ function displayTasksFromDatabase() {
         completedTasks.forEach(function (task) {
             createTaskListItem(task.key, task.text, true);
         });
+
+        // Update the completed percentage
+        updateCompletedPercentage();
     });
 }
 
@@ -76,14 +100,11 @@ function createTaskListItem(taskKey, taskText, isCompleted) {
 
     if (isCompleted) {
         listItem.style.backgroundColor = '#f2f2f2'; // Gray background for completed tasks
-        taskButton.addEventListener('click', function () {
-            toggleTaskCompletion(taskKey, isCompleted); // Toggle task completion status
-        });
-    } else {
-        taskButton.addEventListener('click', function () {
-            toggleTaskCompletion(taskKey, isCompleted); // Toggle task completion status
-        });
     }
+
+    taskButton.addEventListener('click', function () {
+        toggleTaskCompletion(taskKey, isCompleted); // Toggle task completion status
+    });
 
     listItem.appendChild(taskButton);
     taskList.appendChild(listItem);
@@ -100,4 +121,3 @@ addButton.addEventListener('click', function () {
 
 // Initialize and display tasks
 displayTasksFromDatabase();
-
