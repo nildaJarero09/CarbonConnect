@@ -145,6 +145,20 @@ function validate_field(field) {
   }
 }
 
+// for hamburger menu
+const hamburger = document.querySelector('.hamburger');
+const body = document.querySelector('body');
+
+hamburger.addEventListener('click', () => {
+    body.classList.toggle('menu-open');
+});
+
+// close menu
+const closeMenuBtn = document.querySelector('.close-menu');
+
+closeMenuBtn.addEventListener('click', () => {
+    body.classList.remove('menu-open');
+});
 
     
  
