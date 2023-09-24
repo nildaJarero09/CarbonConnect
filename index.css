@@ -1,14 +1,14 @@
 html, body {
     width: 100%;
     height: 100%;
-    background: -webkit-linear-gradient(90deg, #3ab97a, #07cada);
+    background-color: #d2ebde;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between; /* This will push items to the left and right ends of the container */
     align-items: center; /* Vertically center the items */
-    background-color: #333; /* Same color as your menu for consistency */
+    background-color:#3ab97a; /* Same color as your menu for consistency */
     padding: 10px 20px; /* Padding to give some space around items */
     position: fixed; /* Keeps the navbar at the top */
     top: 0;
@@ -21,12 +21,13 @@ html, body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
 }
 
 .brand-logo {
-    height: 50px; /* Adjust based on the size you want for your logo */
+    height: 70px; /* Adjust based on the size you want for your logo */
     width: auto;
     margin-right: 15px;
 }
@@ -39,7 +40,7 @@ html, body {
     left: -250px;
     width: 200px;
     height: 100%;
-    background-color: #333;
+    background-color: #fff;
     transition: 0.3s;
     padding-top: 20px;
 }
@@ -48,10 +49,11 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #07caba;
     padding: 10px 15px;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 300px;
 }
 
 .menu a:hover, .close-menu:hover {
@@ -102,3 +104,42 @@ html, body {
     border: none;
     outline: none;
 }
+
+/* Now for the main page*/
+
+h1{
+    padding-top: 100px;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    text-shadow: #555;
+}
+#problem_container, #solution_container{
+padding-top: 15px;
+width: 100%;
+background-color:#3ab97a ;
+flex-shrink: 0;
+
+
+padding:15px;
+margin-top: 20px;
+margin-left: 15px;
+margin-right:15px;
+align-items: center;
+}
+
+
+h2{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: Montserrat;
+}
+p{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    font-family: Montserrat;
+
+}
+
