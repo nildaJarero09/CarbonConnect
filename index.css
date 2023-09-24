@@ -4,6 +4,33 @@ html, body {
     background: -webkit-linear-gradient(90deg, #3ab97a, #07cada);
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between; /* This will push items to the left and right ends of the container */
+    align-items: center; /* Vertically center the items */
+    background-color: #333; /* Same color as your menu for consistency */
+    padding: 10px 20px; /* Padding to give some space around items */
+    position: fixed; /* Keeps the navbar at the top */
+    top: 0;
+    left: 0;
+    right: 0; /* Stretch navbar to full viewport width */
+    z-index: 1001; /* Ensure it's above other items, including the menu */
+}
+
+.navbar-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.brand-logo {
+    height: 50px; /* Adjust based on the size you want for your logo */
+    width: auto;
+    margin-right: 15px;
+}
+
 .menu-container {
     display: flex;
     flex-direction: column;
@@ -37,21 +64,15 @@ html, body {
 
 .hamburger {
     background: none;
+    color: white;
     border: none;
     font-size: 30px;
-    margin-left: 20px;
     cursor: pointer;
 }
 
 /* Style for when the menu is opened */
 .menu-open .menu-container {
     left: 0;
-}
-
-.brand-logo img {
-    height: 40px;
-    width: auto;
-    margin-right: 15px;
 }
 
 .close-menu {
