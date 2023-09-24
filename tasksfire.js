@@ -99,10 +99,14 @@ function displayTasksFromDatabase() {
 function createTaskListItem(taskKey, taskText, isCompleted) {
     var listItem = document.createElement('li');
     var taskButton = document.createElement('button'); // Task button
+    taskButton.style.backgroundColor = 'transparent'
+    
     taskButton.innerText = taskText;
+    taskButton.style.fontSize = "14px"
+    taskButton.style.fontFamily = "Montserrat"
 
     if (isCompleted) {
-        listItem.style.backgroundColor = '#f2f2f2'; // Gray background for completed tasks
+        listItem.style.backgroundColor = '#3ab97a'; // Gray background for completed tasks
     }
 
     taskButton.addEventListener('click', function () {
