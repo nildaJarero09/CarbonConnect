@@ -3,11 +3,14 @@
 var firebaseConfig = {
     apiKey: "AIzaSyBCxQrqopNLvh8f6PNKB-uXZS5Sf_RaT2g",
     authDomain: "carbonconnect2023.firebaseapp.com",
+    databaseURL: "https://carbonconnect2023-default-rtdb.firebaseio.com",
     projectId: "carbonconnect2023",
     storageBucket: "carbonconnect2023.appspot.com",
     messagingSenderId: "1041152472743",
     appId: "1:1041152472743:web:4297ad684e743d132f4d82",
+    measurementId: "G-0MC50RLZCN"
   };
+  
 
 firebase.initializeApp(firebaseConfig);
 // Get a reference to the Firebase database
