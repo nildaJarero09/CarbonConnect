@@ -153,12 +153,15 @@ hamburger.addEventListener('click', () => {
     body.classList.toggle('menu-open');
 });
 
-// close menu
+ //close menu
 const closeMenuBtn = document.querySelector('.close-menu');
 
 closeMenuBtn.addEventListener('click', () => {
-    body.classList.remove('menu-open');
+   body.classList.remove('menu-open');
 });
+
+
+      
 
     
  
