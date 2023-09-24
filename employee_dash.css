@@ -83,7 +83,7 @@ color: #000;
 text-align: center;
 font-family: Montserrat;
 font-style: normal;
-font-weight: 500px;
+font-weight: 300px;
 line-height: normal;
 margin-top: 10px;
     
@@ -103,6 +103,7 @@ ul task-list{
     padding: 5px;
     border: 1px solid #057781;
     border-radius: 5px;
+    background-color: aliceblue;
 
 width: 238px;
 height: 34px;
