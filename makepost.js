@@ -108,7 +108,7 @@ document.getElementById('editorForm').addEventListener('submit', function(e) {
 
     // Check the checkbox status
     var isPublic = document.getElementById('makePublicCheckbox').checked;
-    var postStatus = isPublic ? 'public' : 'internal';
+    var postStatus = isPublic ? 'public_pending' : 'internal';
 
     var postData = {
         content: contentHtml,
@@ -174,11 +174,6 @@ function fetchPosts() {
             renderPosts(posts);
         }
     });
-}
-
-function makePostPublic(postId) {
-    // Set the status of the post to 'public'
-    database.ref('/posts/' + postId).update({ status: 'public' });
 }
 
 // Displays posts from database
