@@ -1,3 +1,104 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* This will push items to the left and right ends of the container */
+    align-items: center; /* Vertically center the items */
+    background-color:#3ab97a; /* Same color as your menu for consistency */
+    padding: 10px 20px; /* Padding to give some space around items */
+    position: fixed; /* Keeps the navbar at the top */
+    top: 0;
+    left: 0;
+    right: 0; /* Stretch navbar to full viewport width */
+    z-index: 1001; /* Ensure it's above other items, including the menu */
+}
+
+.navbar-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+}
+
+.brand-logo {
+    height: 70px; /* Adjust based on the size you want for your logo */
+    width: auto;
+    margin-right: 15px;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+    padding-top: 20px;
+}
+
+.menu-links li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #07caba;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300px;
+}
+
+.menu a:hover, .close-menu:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 20px;
+}
+
+.hamburger {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Style for when the menu is opened */
+.menu-open .menu-container {
+    left: 0;
+}
+
+.close-menu {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; /* space between the close button and menu items */
+}
+
+.menu-links li {
+    display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -8,9 +109,9 @@ body {
   
   
   .text-primary {
-    color: #07caba;
+    color: #3ab97a;
     font-family: Montserrat;
-    font-weight: bolder;
+    
   }
   
 
@@ -94,21 +195,23 @@ h1{
 #companies p{
     text-align: center;
     font-family: Montserrat;
-    color:#ffffff;
+    color:#3ab97a;
     font-size: 25px;
+    
 }
 #companies{
 padding-top: 15px;
 margin-left: 20px;
 margin-right: 20px;
-background-color:#3ab97a ;
+background-color:#fff ;
 flex-shrink: 0;
 float:center;
 padding:15px;
 margin-top: 30px;
 align-items: center;
-color: #ffffff;
+color: #3ab97a;
 border-radius: 7px;
 font-family: Montserrat;
+border-bottom: 7px solid burlywood;
 }
  
