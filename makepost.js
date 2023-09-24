@@ -90,24 +90,33 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 var database = firebase.database();
+
+function closePopup() {
+    popup.style.display = "none";
+}
 
 // HTML element to display the content
 var feedDisplay = document.getElementById('feedDisplay');
 
 // store post in database
 document.getElementById('editorForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
     var contentHtml = quill.root.innerHTML;
     console.log(contentHtml);  // logging the content being submitted
-    
+
     var newPostKey = database.ref().child('posts').push().key;
+
+    // Check the checkbox status
+    var isPublic = document.getElementById('makePublicCheckbox').checked;
+    var postStatus = isPublic ? 'public' : 'internal';
+
     var postData = {
         content: contentHtml,
+        status: postStatus
     };
-    
+
+    document.getElementById('makePublicCheckbox').checked = false;
+
     var updates = {};
     updates['/posts/' + newPostKey] = postData;
     
@@ -133,13 +142,15 @@ document.getElementById('editorForm').addEventListener('submit', function(e) {
     });
     
     quill.setContents([]);
+    closePopup();
 });
 
 let lastKey = null; // to remember the key of the last fetched item
 const itemsPerPage = 10;
 
+// Retrieves posts from database
 function fetchPosts() {
-    let ref = database.ref('posts').orderByKey().limitToLast(itemsPerPage);
+    let ref = database.ref('posts').orderByChild('status').limitToLast(itemsPerPage);
     if (lastKey) {
         ref = ref.endAt(lastKey);
     }
@@ -165,12 +176,19 @@ function fetchPosts() {
     });
 }
 
+function makePostPublic(postId) {
+    // Set the status of the post to 'public'
+    database.ref('/posts/' + postId).update({ status: 'public' });
+}
+
+// Displays posts from database
 function renderPosts(posts) {
     // Append posts to the feedDisplay div
     posts.forEach(post => {
         const postElem = document.createElement('div');
         postElem.classList.add('post');
         postElem.innerHTML = post.content;
+
         feedDisplay.prepend(postElem); // prepend to show latest content first
     });
 }
