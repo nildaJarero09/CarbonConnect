@@ -63,109 +63,286 @@ flex-shrink: 0;
 }
 */
 
+.ql-snow .ql-editor::before {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.ql-font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.styledbutton {
+    height: 10%;
+    text-align: center;
+    float: center;
+    margin-top: 15px;
+
+    background-color:#e4d2ae;
+    border-radius: 10px;
+
+    font-family: Montserrat;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    display: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    font-family: Montserrat;
+    display: none; /* Hidden by default */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Black with opacity */
+    z-index: 1; /* Sit on top of the page content */
+}
+
+/* Popup Content */
+.popup-content {
+    position: relative;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 25px;
+    width: 60%;
+    max-width: 600px;
+    background-color: #fff;
+    z-index: 2; 
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#editor {
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+#editor img {
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    overflow: auto;
+}
+
+#submitButton {
+    background-color:#e4d2ae;
+    border-radius: 10px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 12px;
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submitButton:hover {
+    background-color: #cfbf9e;
+}
+
+#feedTitle {
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'montserrat', sans-serif; 
+    color: black;
+}
+
+/* Styling for the main feed container */
+#feedDisplay {
+    width: 80%; 
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    overflow: hidden; /* Ensures content within this container doesn't overflow */
+}
+
+/* Styling for each individual post */
+#feedDisplay .post {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* For posts with images */
+#feedDisplay .post img {
+    max-width: 100%; /* Ensures images are not wider than the post container */
+    height: auto; 
+}
+
+/* Add a hover effect to posts */
+#feedDisplay .post:hover {
+    background-color: #f5f5f5;
+}
+
+.approve-btn {
+    background-color:#07C2CE;
+    border-radius: 10px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 12px;
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.approve-btn:hover {
+    background-color: #299761;
+}
+
+
 /* TASK LIST*/
 #task_container {
-width: 300px;
-height:400px;
-background-color:beige ;
-flex-shrink: 0;
-border-radius: 10px;
-float:left;
-padding:15px;
-margin-top: 40px;
-margin-left:20px;
-}
-
-
-h2 {
-font-size: 24px;
-color: #000;
-text-align: center;
-font-family: Montserrat;
-font-style: normal;
-font-weight: 300px;
-line-height: normal;
-margin-top: 10px;
+    width: 300px;
+    height:400px;
+    background-color:beige ;
+    flex-shrink: 0;
+    border-radius: 10px;
+    float:left;
+    padding:15px;
+    margin-top: 40px;
+    margin-left:20px;
+    }
     
-}
-
-ul task-list{
-    list-style:none;
-    padding: 0;
     
-}
-
-ul badges{
-    list-style:url('plant1.png');;
-    padding: 0;
+    h2 {
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300px;
+    line-height: normal;
+    margin-top: 10px;
+        
+    }
     
-}
-
-
-
- li{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 7px;
-    border: 1px solid #057781;
-    border-radius: 5px;
-    background-color: aliceblue;
-
-width: 238px;
-height: 34px;
-flex-shrink: 0;
-}
-
-
-li:hover{
-    background-color:lightgrey ;
-}
-
-
-#progress_container{
-width: 300px;
-height:200px;
-background-color:beige ;
-flex-shrink: 0;
-border-radius: 10px;
-float:left;
-padding-bottom:20px;
-margin-bottom: 30px;
-margin-left:20px;
-position:absolute;
-bottom: 0;
-left: 0;
-}
-
-#achievements{
+    ul task-list{
+        list-style:none;
+        padding: 0;
+        
+    }
+    
+    ul badges{
+        list-style:url('plant1.png');;
+        padding: 0;
+        
+    }
+    
+    
+     li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 7px;
+        border: 1px solid #057781;
+        border-radius: 5px;
+        background-color: aliceblue;
+    
+    width: 238px;
+    height: 34px;
+    flex-shrink: 0;
+    }
+    
+    
+    li:hover{
+        background-color:lightgrey ;
+    }
+    
+    
+    #progress_container{
     width: 300px;
     height:200px;
     background-color:beige ;
     flex-shrink: 0;
     border-radius: 10px;
-    float:right;
+    float:left;
     padding-bottom:20px;
     margin-bottom: 30px;
-    margin-right:20px;
+    margin-left:20px;
     position:absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     }
-
-#achievements input{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 7px;
-    border: 1px solid #057781;
-    border-radius: 5px;
-    background-color: aliceblue;
-
-width: 238px;
-height: 34px;
-flex-shrink: 0;
-}
-
+    
+    #feed_container {
+        width: 600px;
+        height:630px;
+        background-color:beige ;
+        flex-shrink: 0;
+        border-radius: 10px;
+        float:left;
+        padding:15px;
+        margin-top: 40px;
+        margin-left:20px;
+        }
+    
+    #add_contribution {
+        width: 300px;
+        height: 400px;
+        background-color: beige;
+        flex-shrink: 0;
+        border-radius: 10px;
+        float: right;
+        padding: 15px;
+        margin-top: 40px;
+        margin-right: 20px;
+    }
+    
+    
+    #achievements{
+        width: 300px;
+        height:200px;
+        background-color:beige ;
+        flex-shrink: 0;
+        border-radius: 10px;
+        float:right;
+        padding-bottom:20px;
+        margin-bottom: 30px;
+        margin-right:20px;
+        position:absolute;
+        bottom: 0;
+        right: 0;
+        }
+    
+    #achievements input{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 7px;
+        border: 1px solid #057781;
+        border-radius: 5px;
+        background-color: aliceblue;
+    
+    width: 238px;
+    height: 34px;
+    flex-shrink: 0;
+    }
+    
+    
