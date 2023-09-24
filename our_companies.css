@@ -3,22 +3,17 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: beige;
-    color: #3ab97a;
-    font-family: "Montserrat", sans-serif;
+    
   }
   
   
   .text-primary {
-    color: #3ab97a;
+    color: #07caba;
     font-family: Montserrat;
-    font-weight: 300px;
+    font-weight: bolder;
   }
   
-  #commit{
-    color: #07C2CE;
-    font-family: Montserrat;
-    font-weight: 300px;
-  }
+
 
 
 .main-container {
@@ -93,7 +88,7 @@ body {
 h1{
     text-align: center;
     color: #3ab97a;
-    font-size: 35px;
+    font-size: 50px;
   }
 
 #companies p{
