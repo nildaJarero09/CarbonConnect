@@ -59,6 +59,7 @@ flex-direction: column;
 
     
     background: #BDF0DD;
+    
 }
 
 #form_header {
@@ -149,4 +150,13 @@ input {
     display: center;
     justify-content: center;
     align-items: center;
+}
+
+.image{
+    height: 250px;
+    position: fixed; /* Keeps the navbar at the top */
+    top:-30px;
+    margin-right: 20px;
+
+   
 }
