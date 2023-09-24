@@ -71,8 +71,8 @@ background-color:beige ;
 flex-shrink: 0;
 border-radius: 10px;
 float:left;
-padding:20px;
-margin-top: 50px;
+padding:15px;
+margin-top: 40px;
 margin-left:20px;
 }
 
@@ -90,17 +90,25 @@ margin-top: 10px;
 }
 
 ul task-list{
-    list-style: none;
+    list-style:none;
     padding: 0;
     
 }
+
+ul badges{
+    list-style:url('plant1.png');;
+    padding: 0;
+    
+}
+
+
 
  li{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    padding: 5px;
+    padding: 7px;
     border: 1px solid #057781;
     border-radius: 5px;
     background-color: aliceblue;
@@ -131,14 +139,33 @@ bottom: 0;
 left: 0;
 }
 
-h3{
-font-size: 24px;
-font-weight: bolder;
-color: #000;
-text-align: center;
-font-family: Montserrat;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+#achievements{
+    width: 300px;
+    height:200px;
+    background-color:beige ;
+    flex-shrink: 0;
+    border-radius: 10px;
+    float:right;
+    padding-bottom:20px;
+    margin-bottom: 30px;
+    margin-right:20px;
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    }
+
+#achievements input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 7px;
+    border: 1px solid #057781;
+    border-radius: 5px;
+    background-color: aliceblue;
+
+width: 238px;
+height: 34px;
+flex-shrink: 0;
 }
 
