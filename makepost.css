@@ -93,7 +93,7 @@ html, body {
 }
 
 #submitButton:hover {
-    background-color: #299761; /* A slightly darker shade for hover effect */
+    background-color: #299761;
 }
 
 #feedTitle {
@@ -134,4 +134,24 @@ html, body {
 #feedDisplay .post:hover {
     background-color: #f5f5f5;
 }
+
+.approve-btn {
+    background-color:#07C2CE ;
+    border-radius: 10px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 12px;
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.approve-btn:hover {
+    background-color: #299761;
+}
+
 
