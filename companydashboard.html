@@ -32,12 +32,22 @@
     <div id="content">
         <h1>Chevron's Commitment to Zero Emissions</h1>
 
-        <div id="tree_container">
+        <div class="tree_container">
+            <h2>Completed Percentage</h2>
+            <p id="percentage">Percentage: <span id="percentage-value">0%</span></p>
+            <img id="status-image" src="image100.png" alt="Status Image">
         </div>
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+        
+            <!-- Our script must be loaded after firebase references -->
+        <script src="progress.js"></script>
 
-        <div id="goal">
-            <p>We are <var>percentageInput</var> done with our goal!</p>
-        </div>
 
         <div class="mission">
             <p>We believe the future of energy will be lower carbon, and we intend to be a leader today and in that future.
